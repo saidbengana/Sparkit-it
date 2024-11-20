@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: spark-it
+    env: node
+    buildCommand: pnpm install && pnpm prisma:generate && pnpm build
+    startCommand: pnpm start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: spark-it-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3000
+
+databases:
+  - name: spark-it-db
+    databaseName: sparkit
+    user: postgres
+    plan: free
