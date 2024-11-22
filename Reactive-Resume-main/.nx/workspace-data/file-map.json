@@ -2,6 +2,7 @@
   "version": "6.0",
   "nxVersion": "19.6.4",
   "deps": {
+    "@aws-sdk/client-s3": "^3.696.0",
     "@dnd-kit/core": "^6.1.0",
     "@dnd-kit/modifiers": "^7.0.0",
     "@dnd-kit/sortable": "^8.0.0",
@@ -71,7 +72,9 @@
     "cookie-parser": "^1.4.6",
     "dayjs": "^1.11.13",
     "deepmerge": "^4.3.1",
+    "dotenv": "^16.4.5",
     "file-saver": "^2.0.5",
+    "file-type": "^19.6.0",
     "framer-motion": "^11.3.31",
     "fuzzy": "^0.1.3",
     "helmet": "^7.1.0",
@@ -241,180 +244,184 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "compose-dev.yml",
-        "hash": "13301093500204873294"
-      },
-      {
         "file": ".dockerignore",
         "hash": "16654593521324975234"
-      },
-      {
-        "file": "docker-compose.yml",
-        "hash": "13900176844893013334"
-      },
-      {
-        "file": "Dockerfile",
-        "hash": "7835795355702415547"
-      },
-      {
-        "file": "tools/compose/simple.yml",
-        "hash": "788409737029347319"
-      },
-      {
-        "file": ".eslintrc.json",
-        "hash": "1427077518300949368"
-      },
-      {
-        "file": "docker/README.md",
-        "hash": "3608502544184742304"
-      },
-      {
-        "file": "lingui.config.ts",
-        "hash": "2904803566143606614"
-      },
-      {
-        "file": "LICENSE.md",
-        "hash": "5482489377333255808"
-      },
-      {
-        "file": ".github/FUNDING.yml",
-        "hash": "7002931473543712849"
-      },
-      {
-        "file": ".ncurc.json",
-        "hash": "8802100175052779483"
-      },
-      {
-        "file": "SECURITY.md",
-        "hash": "12172450632707528546"
-      },
-      {
-        "file": "tools/compose/development.yml",
-        "hash": "14631186343231870912"
-      },
-      {
-        "file": "README.md",
-        "hash": "17855757569818841098"
-      },
-      {
-        "file": ".github/workflows/sync-crowdin-translations.yml",
-        "hash": "4607407896268008199"
-      },
-      {
-        "file": "nx.json",
-        "hash": "13445781542007367066"
-      },
-      {
-        "file": "tools/compose/swarm.yml",
-        "hash": "4061876024792820175"
-      },
-      {
-        "file": ".github/workflows/lint-test-build.yml",
-        "hash": "13862999394174074405"
-      },
-      {
-        "file": "compose.yml",
-        "hash": "18337442323528860922"
-      },
-      {
-        "file": "Procfile",
-        "hash": "15868475163618083621"
-      },
-      {
-        "file": "tools/prisma/schema.prisma",
-        "hash": "15153808216642767280"
-      },
-      {
-        "file": "tailwind.config.js",
-        "hash": "895975969575996570"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "3844383753932548732"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "14932722313705501266"
-      },
-      {
-        "file": "tools/compose/traefik-secure.yml",
-        "hash": "2438801452939842390"
-      },
-      {
-        "file": ".github/ISSUE_TEMPLATE/bug-report.yml",
-        "hash": "13694654329090513164"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "12483759230239344661"
       },
       {
         "file": ".editorconfig",
         "hash": "10322077767218152985"
       },
       {
-        "file": ".github/workflows/publish-docker-image.yml",
-        "hash": "15716129048308076138"
+        "file": ".env.example",
+        "hash": "7187225300283370126"
       },
       {
-        "file": "tools/prisma/migrations/20240505101746_add_statistics_table/migration.sql",
-        "hash": "16384355106992502365"
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
       },
       {
-        "file": "crowdin.yml",
-        "hash": "14562398026889430805"
+        "file": ".eslintrc.json",
+        "hash": "1427077518300949368"
       },
       {
-        "file": "docs/DEVELOPMENT.md",
-        "hash": "5080368331913201144"
+        "file": ".github/FUNDING.yml",
+        "hash": "7002931473543712849"
       },
       {
-        "file": "CONTRIBUTING.md",
-        "hash": "8716317918755073174"
-      },
-      {
-        "file": ".npmrc",
-        "hash": "18146077964924282686"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "2392540309333994723"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "3715264048387931192"
-      },
-      {
-        "file": "tools/prisma/migrations/migration_lock.toml",
-        "hash": "11493296588214560035"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "10547623545108366468"
-      },
-      {
-        "file": "tools/tsconfig.tools.json",
-        "hash": "9165945902733727902"
+        "file": ".github/ISSUE_TEMPLATE/bug-report.yml",
+        "hash": "13694654329090513164"
       },
       {
         "file": ".github/ISSUE_TEMPLATE/feature-request.yml",
         "hash": "304352946338454530"
       },
       {
-        "file": ".env.example",
-        "hash": "7187225300283370126"
+        "file": ".github/workflows/lint-test-build.yml",
+        "hash": "13862999394174074405"
       },
       {
-        "file": "package.json",
-        "hash": "8573673344120682322"
+        "file": ".github/workflows/publish-docker-image.yml",
+        "hash": "15716129048308076138"
+      },
+      {
+        "file": ".github/workflows/sync-crowdin-translations.yml",
+        "hash": "4607407896268008199"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "3715264048387931192"
+      },
+      {
+        "file": ".ncurc.json",
+        "hash": "8802100175052779483"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "18146077964924282686"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "404821422070351792"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "10547623545108366468"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "10720820794649684220"
+      },
+      {
+        "file": "CONTRIBUTING.md",
+        "hash": "8716317918755073174"
+      },
+      {
+        "file": "Dockerfile",
+        "hash": "7835795355702415547"
+      },
+      {
+        "file": "LICENSE.md",
+        "hash": "5482489377333255808"
+      },
+      {
+        "file": "README.md",
+        "hash": "17855757569818841098"
+      },
+      {
+        "file": "SECURITY.md",
+        "hash": "12172450632707528546"
+      },
+      {
+        "file": "docker-compose.chrome.yml",
+        "hash": "12199154893222907050"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "14100134609094271459"
+      },
+      {
+        "file": "docker/README.md",
+        "hash": "3608502544184742304"
       },
       {
         "file": "docs/API.md",
         "hash": "7866644327167819539"
       },
       {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
+        "file": "docs/DEVELOPMENT.md",
+        "hash": "5080368331913201144"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "2392540309333994723"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "14932722313705501266"
+      },
+      {
+        "file": "lingui.config.ts",
+        "hash": "2904803566143606614"
+      },
+      {
+        "file": "nx.json",
+        "hash": "13445781542007367066"
+      },
+      {
+        "file": "package.json",
+        "hash": "6974027997724962749"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "2259060921846787681"
+      },
+      {
+        "file": "r2-cors.json",
+        "hash": "17684344150336977143"
+      },
+      {
+        "file": "r2-policy.json",
+        "hash": "11457588394644737336"
+      },
+      {
+        "file": "render.yaml",
+        "hash": "12384848285664301424"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "895975969575996570"
+      },
+      {
+        "file": "test-cors.html",
+        "hash": "2445578540203514131"
+      },
+      {
+        "file": "test-r2-config.js",
+        "hash": "4139930048048114494"
+      },
+      {
+        "file": "test-storage.js",
+        "hash": "17610189945901459777"
+      },
+      {
+        "file": "tools/compose/development.yml",
+        "hash": "14631186343231870912"
+      },
+      {
+        "file": "tools/compose/nginx-proxy-manager.yml",
+        "hash": "14073501391169587722"
+      },
+      {
+        "file": "tools/compose/simple.yml",
+        "hash": "788409737029347319"
+      },
+      {
+        "file": "tools/compose/swarm.yml",
+        "hash": "4061876024792820175"
+      },
+      {
+        "file": "tools/compose/traefik-secure.yml",
+        "hash": "2438801452939842390"
       },
       {
         "file": "tools/compose/traefik.yml",
@@ -425,464 +432,229 @@
         "hash": "5714697823105260854"
       },
       {
-        "file": "CHANGELOG.md",
-        "hash": "10720820794649684220"
+        "file": "tools/prisma/migrations/20240505101746_add_statistics_table/migration.sql",
+        "hash": "16384355106992502365"
       },
       {
         "file": "tools/prisma/migrations/20240507090221_make_last_signed_in_non_null/migration.sql",
         "hash": "7556902387049850663"
       },
       {
-        "file": ".prettierignore",
-        "hash": "404821422070351792"
+        "file": "tools/prisma/migrations/migration_lock.toml",
+        "hash": "11493296588214560035"
       },
       {
-        "file": "tools/compose/nginx-proxy-manager.yml",
-        "hash": "14073501391169587722"
+        "file": "tools/prisma/schema.prisma",
+        "hash": "15153808216642767280"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "9165945902733727902"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "12483759230239344661"
       }
     ],
     "projectFileMap": {
-      "ui": [
+      "schema": [
         {
-          "file": "libs/ui/.eslintrc.json",
-          "hash": "7118798815127207976"
+          "file": "libs/schema/.eslintrc.json",
+          "hash": "10905178498824427073"
         },
         {
-          "file": "libs/ui/package.json",
-          "hash": "11403504523692712719"
+          "file": "libs/schema/.swcrc",
+          "hash": "16777374493166073853"
         },
         {
-          "file": "libs/ui/postcss.config.js",
-          "hash": "15072321357058817229"
-        },
-        {
-          "file": "libs/ui/project.json",
-          "hash": "14095077290658583749"
-        },
-        {
-          "file": "libs/ui/src/components/accordion.tsx",
-          "hash": "2037720603542807962",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-accordion",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/alert-dialog.tsx",
-          "hash": "12413296694470616368",
-          "deps": [
-            "npm:@radix-ui/react-alert-dialog",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/alert.tsx",
-          "hash": "10277229419622998028",
+          "file": "libs/schema/package.json",
+          "hash": "17321268349504614958",
           "deps": [
             "utils",
-            "npm:class-variance-authority",
-            "npm:react"
+            "npm:zod",
+            "npm:@paralleldrive/cuid2",
+            "npm:@swc/helpers"
           ]
         },
         {
-          "file": "libs/ui/src/components/aspect-ratio.tsx",
-          "hash": "13213775543408763760",
-          "deps": [
-            "npm:@radix-ui/react-aspect-ratio"
-          ]
+          "file": "libs/schema/project.json",
+          "hash": "3660265183686260541"
         },
         {
-          "file": "libs/ui/src/components/avatar.tsx",
-          "hash": "14048366838710880954",
+          "file": "libs/schema/src/basics/custom.ts",
+          "hash": "831599206969838142",
           "deps": [
-            "npm:@radix-ui/react-avatar",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/badge-input.tsx",
-          "hash": "329960483557062377",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/badge.tsx",
-          "hash": "7629339537764848879",
-          "deps": [
-            "utils",
-            "npm:class-variance-authority"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/button.tsx",
-          "hash": "17378356696228869820",
-          "deps": [
-            "npm:@radix-ui/react-slot",
-            "utils",
-            "npm:class-variance-authority",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/card.tsx",
-          "hash": "6290503975195074428",
-          "deps": [
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/checkbox.tsx",
-          "hash": "10220801610309834576",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-checkbox",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/combobox.tsx",
-          "hash": "5218285211370902248",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/command.tsx",
-          "hash": "6289763599235601206",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-dialog",
-            "utils",
-            "npm:cmdk",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/context-menu.tsx",
-          "hash": "13812780778306150469",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-context-menu",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/dialog.tsx",
-          "hash": "16926799458583599225",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-dialog",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/dropdown-menu.tsx",
-          "hash": "10767999373272708966",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-dropdown-menu",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/form.tsx",
-          "hash": "4780093769017178487",
-          "deps": [
-            "npm:@radix-ui/react-label",
-            "npm:@radix-ui/react-slot",
-            "hooks",
-            "utils",
-            "npm:react",
-            "npm:react-hook-form"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/hover-card.tsx",
-          "hash": "7257560986350655127",
-          "deps": [
-            "npm:@radix-ui/react-hover-card",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/index.ts",
-          "hash": "257289429482442282"
-        },
-        {
-          "file": "libs/ui/src/components/input.tsx",
-          "hash": "6007236308824161518",
-          "deps": [
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/label.tsx",
-          "hash": "6513445223075937630",
-          "deps": [
-            "npm:@radix-ui/react-label",
-            "utils",
-            "npm:class-variance-authority",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/popover.tsx",
-          "hash": "1156107646197962302",
-          "deps": [
-            "npm:@radix-ui/react-popover",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/portal.tsx",
-          "hash": "14360132747506065174",
-          "deps": [
-            "npm:@radix-ui/react-portal"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/resizable-panel.tsx",
-          "hash": "3315010528393279759",
-          "deps": [
-            "npm:@phosphor-icons/react",
-            "utils",
-            "npm:react-resizable-panels"
-          ]
-        },
-        {
-          "file": "libs/ui/src/components/rich-input.tsx",
-          "hash": "336338425095964541",
-          "deps": [
-            "npm:@hookform/resolvers",
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-popover",
-            "utils",
-            "npm:@tiptap/extension-highlight",
-            "npm:@tiptap/extension-image",
-            "npm:@tiptap/extension-link",
-            "npm:@tiptap/extension-text-align",
-            "npm:@tiptap/extension-underline",
-            "npm:@tiptap/react",
-            "npm:@tiptap/starter-kit",
-            "npm:react",
-            "npm:react-hook-form",
             "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/scroll-area.tsx",
-          "hash": "5862051200958223139",
+          "file": "libs/schema/src/basics/index.ts",
+          "hash": "8573708198706920208",
           "deps": [
-            "npm:@radix-ui/react-scroll-area",
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/index.ts",
+          "hash": "5444514367642710340",
+          "deps": [
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/metadata/index.ts",
+          "hash": "4836501207517276794",
+          "deps": [
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/sample.ts",
+          "hash": "14700867050163196044"
+        },
+        {
+          "file": "libs/schema/src/sections/award.ts",
+          "hash": "10264190314138766217",
+          "deps": [
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/sections/certification.ts",
+          "hash": "8090965389002026442",
+          "deps": [
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/sections/custom-section.ts",
+          "hash": "13078451413776718263",
+          "deps": [
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/sections/education.ts",
+          "hash": "13739630387234899627",
+          "deps": [
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/sections/experience.ts",
+          "hash": "8048435035027117551",
+          "deps": [
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/schema/src/sections/index.ts",
+          "hash": "7882965976974539241",
+          "deps": [
             "utils",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/select.tsx",
-          "hash": "9355836438193057635",
+          "file": "libs/schema/src/sections/interest.ts",
+          "hash": "17054304163677612105",
           "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-select",
-            "utils",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/separator.tsx",
-          "hash": "3214515836286948120",
+          "file": "libs/schema/src/sections/language.ts",
+          "hash": "3092854228452384829",
           "deps": [
-            "npm:@radix-ui/react-separator",
-            "utils",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/sheet.tsx",
-          "hash": "7450894883777990231",
+          "file": "libs/schema/src/sections/profile.ts",
+          "hash": "9159362368632258153",
           "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-dialog",
-            "utils",
-            "npm:class-variance-authority",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/shortcut.tsx",
-          "hash": "14636710048417107787",
+          "file": "libs/schema/src/sections/project.ts",
+          "hash": "3785391943703045951",
           "deps": [
-            "utils",
-            "npm:react",
-            "npm:usehooks-ts"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/skeleton.tsx",
-          "hash": "18190638686456598854",
+          "file": "libs/schema/src/sections/publication.ts",
+          "hash": "15845881947444457905",
           "deps": [
-            "utils"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/slider.tsx",
-          "hash": "4324060983110413577",
+          "file": "libs/schema/src/sections/reference.ts",
+          "hash": "116490559630060543",
           "deps": [
-            "npm:@radix-ui/react-slider",
-            "utils",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/switch.tsx",
-          "hash": "2056301828617487753",
+          "file": "libs/schema/src/sections/skill.ts",
+          "hash": "8301653707501587202",
           "deps": [
-            "npm:@radix-ui/react-switch",
-            "utils",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/tabs.tsx",
-          "hash": "2128053415481640116",
+          "file": "libs/schema/src/sections/volunteer.ts",
+          "hash": "15469804711941817930",
           "deps": [
-            "npm:@radix-ui/react-tabs",
-            "utils",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/toast.tsx",
-          "hash": "12355343790813975977",
+          "file": "libs/schema/src/shared/id.ts",
+          "hash": "12371910861242898021",
           "deps": [
-            "npm:@phosphor-icons/react",
-            "npm:@radix-ui/react-toast",
-            "utils",
-            "npm:class-variance-authority",
-            "npm:react"
+            "npm:@paralleldrive/cuid2",
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/toggle-group.tsx",
-          "hash": "17261493381688115134",
+          "file": "libs/schema/src/shared/index.ts",
+          "hash": "12753253678802985827"
+        },
+        {
+          "file": "libs/schema/src/shared/item.ts",
+          "hash": "7879985572272558073",
           "deps": [
-            "npm:@radix-ui/react-toggle-group",
-            "utils",
-            "npm:class-variance-authority",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/toggle.tsx",
-          "hash": "17290642745126319100",
+          "file": "libs/schema/src/shared/url.ts",
+          "hash": "9485765620747948345",
           "deps": [
-            "npm:@radix-ui/react-toggle",
-            "utils",
-            "npm:class-variance-authority",
-            "npm:react"
+            "npm:zod"
           ]
         },
         {
-          "file": "libs/ui/src/components/tooltip.tsx",
-          "hash": "2960565526801747765",
-          "deps": [
-            "npm:@radix-ui/react-tooltip",
-            "utils",
-            "npm:react"
-          ]
+          "file": "libs/schema/tsconfig.json",
+          "hash": "5840880287502376438"
         },
         {
-          "file": "libs/ui/src/index.ts",
-          "hash": "4015617590384224623"
+          "file": "libs/schema/tsconfig.lib.json",
+          "hash": "3632393694954060084"
         },
         {
-          "file": "libs/ui/src/variants/alert.ts",
-          "hash": "36121954774299095",
-          "deps": [
-            "npm:class-variance-authority"
-          ]
-        },
-        {
-          "file": "libs/ui/src/variants/badge.ts",
-          "hash": "1735570582978383462",
-          "deps": [
-            "npm:class-variance-authority"
-          ]
-        },
-        {
-          "file": "libs/ui/src/variants/button.ts",
-          "hash": "6173528085704059201",
-          "deps": [
-            "npm:class-variance-authority"
-          ]
-        },
-        {
-          "file": "libs/ui/src/variants/index.ts",
-          "hash": "2648058627744963833"
-        },
-        {
-          "file": "libs/ui/src/variants/sheet.ts",
-          "hash": "6766996747465083431",
-          "deps": [
-            "npm:class-variance-authority"
-          ]
-        },
-        {
-          "file": "libs/ui/src/variants/toast.ts",
-          "hash": "13559306200805860668",
-          "deps": [
-            "npm:class-variance-authority"
-          ]
-        },
-        {
-          "file": "libs/ui/src/variants/toggle.ts",
-          "hash": "15607392271952187667",
-          "deps": [
-            "npm:class-variance-authority"
-          ]
-        },
-        {
-          "file": "libs/ui/tailwind.config.js",
-          "hash": "10456122484538361574",
-          "deps": [
-            "npm:@nx/react"
-          ]
-        },
-        {
-          "file": "libs/ui/tsconfig.json",
-          "hash": "6996585143515498368"
-        },
-        {
-          "file": "libs/ui/tsconfig.lib.json",
-          "hash": "1480945559902334742"
-        },
-        {
-          "file": "libs/ui/tsconfig.spec.json",
+          "file": "libs/schema/tsconfig.spec.json",
           "hash": "3905317577701168930"
         },
         {
-          "file": "libs/ui/vite.config.ts",
-          "hash": "8851780436073813066",
+          "file": "libs/schema/vite.config.ts",
+          "hash": "9746681103306424653",
           "deps": [
             "npm:@nx/vite",
-            "npm:@vitejs/plugin-react-swc",
-            "npm:vite",
-            "npm:vite-plugin-dts"
+            "npm:vite"
           ]
         }
       ],
@@ -1104,6 +876,585 @@
           ]
         }
       ],
+      "server": [
+        {
+          "file": "apps/server/.env.example",
+          "hash": "3509403115148070599"
+        },
+        {
+          "file": "apps/server/.eslintrc.json",
+          "hash": "18090616762053917544"
+        },
+        {
+          "file": "apps/server/jest.config.ts",
+          "hash": "6918528320339135621"
+        },
+        {
+          "file": "apps/server/project.json",
+          "hash": "11823753465927185734"
+        },
+        {
+          "file": "apps/server/src/app.module.ts",
+          "hash": "8723983515907564679",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/serve-static",
+            "npm:nest-raven",
+            "npm:nestjs-zod"
+          ]
+        },
+        {
+          "file": "apps/server/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/server/src/auth/auth.controller.ts",
+          "hash": "17469811317487268558",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/swagger",
+            "dto",
+            "utils",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/auth.module.ts",
+          "hash": "3114396140385897647",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/jwt",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/auth.service.ts",
+          "hash": "704897130314632738",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/jwt",
+            "npm:@prisma/client",
+            "dto",
+            "utils",
+            "npm:bcryptjs",
+            "npm:otplib"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/guards/github.guard.ts",
+          "hash": "14750390728592143522",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/guards/google.guard.ts",
+          "hash": "13042052513782240358",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/guards/jwt.guard.ts",
+          "hash": "10489447177092028112",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/guards/local.guard.ts",
+          "hash": "11777836862100987120",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/guards/optional.guard.ts",
+          "hash": "1229565013591210477",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "dto"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/guards/refresh.guard.ts",
+          "hash": "893533241282590759",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/guards/two-factor.guard.ts",
+          "hash": "16825427204864375335",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/strategy/dummy.strategy.ts",
+          "hash": "11953245001518445504",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "npm:passport"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/strategy/github.strategy.ts",
+          "hash": "2739711374867705284",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "npm:@prisma/client",
+            "utils",
+            "npm:passport-github2"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/strategy/google.strategy.ts",
+          "hash": "1783731157069147795",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "npm:@prisma/client",
+            "utils",
+            "npm:passport-google-oauth20"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/strategy/jwt.strategy.ts",
+          "hash": "8212452753780116784",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/passport",
+            "npm:express",
+            "npm:passport-jwt"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/strategy/local.strategy.ts",
+          "hash": "6950640422264408376",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "utils",
+            "npm:passport-local"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/strategy/refresh.strategy.ts",
+          "hash": "18028940907507907915",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/passport",
+            "npm:express",
+            "npm:passport-jwt"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/strategy/two-factor.strategy.ts",
+          "hash": "14014474470799581585",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/passport",
+            "npm:express",
+            "npm:passport-jwt"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/utils/cookie.ts",
+          "hash": "294716588526085144",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/server/src/auth/utils/payload.ts",
+          "hash": "15478728693376860747",
+          "deps": [
+            "schema",
+            "npm:nestjs-zod"
+          ]
+        },
+        {
+          "file": "apps/server/src/config/config.module.ts",
+          "hash": "5537123787934532176",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/server/src/config/schema.ts",
+          "hash": "7044717316845586965",
+          "deps": [
+            "npm:nestjs-zod"
+          ]
+        },
+        {
+          "file": "apps/server/src/contributors/contributors.controller.ts",
+          "hash": "1550573201127705156",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/contributors/contributors.module.ts",
+          "hash": "13719525956194900926",
+          "deps": [
+            "npm:@nestjs/axios",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/contributors/contributors.service.ts",
+          "hash": "11889071708786625215",
+          "deps": [
+            "npm:@nestjs/axios",
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "dto"
+          ]
+        },
+        {
+          "file": "apps/server/src/database/database.module.ts",
+          "hash": "6123975288688041958",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:nestjs-prisma"
+          ]
+        },
+        {
+          "file": "apps/server/src/feature/feature.controller.ts",
+          "hash": "3675009712749151124",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/feature/feature.module.ts",
+          "hash": "14120888947307257749",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/feature/feature.service.ts",
+          "hash": "7810264816942461463",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/server/src/health/browser.health.ts",
+          "hash": "9489982795138628322",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/terminus"
+          ]
+        },
+        {
+          "file": "apps/server/src/health/database.health.ts",
+          "hash": "13727314099810705613",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/terminus",
+            "npm:nestjs-prisma"
+          ]
+        },
+        {
+          "file": "apps/server/src/health/health.controller.ts",
+          "hash": "16711790807592412143",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger",
+            "npm:@nestjs/terminus"
+          ]
+        },
+        {
+          "file": "apps/server/src/health/health.module.ts",
+          "hash": "12274061778272252512",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/terminus"
+          ]
+        },
+        {
+          "file": "apps/server/src/health/storage.health.ts",
+          "hash": "2736104058689736002",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/terminus"
+          ]
+        },
+        {
+          "file": "apps/server/src/mail/mail.module.ts",
+          "hash": "15184470399446316180",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs-modules/mailer",
+            "npm:nodemailer"
+          ]
+        },
+        {
+          "file": "apps/server/src/mail/mail.service.ts",
+          "hash": "2885622658860708379",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs-modules/mailer"
+          ]
+        },
+        {
+          "file": "apps/server/src/main.ts",
+          "hash": "9284269058136427263",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/core",
+            "npm:@nestjs/platform-express",
+            "npm:@nestjs/swagger",
+            "npm:cookie-parser",
+            "npm:helmet",
+            "npm:nestjs-zod"
+          ]
+        },
+        {
+          "file": "apps/server/src/modules/cover-letter/cover-letter.controller.ts",
+          "hash": "17129913463279867100",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/passport",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/server/src/modules/cover-letter/cover-letter.module.ts",
+          "hash": "11611291749452994991",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/server/src/modules/cover-letter/cover-letter.service.ts",
+          "hash": "7332784229609983854",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/server/src/printer/printer.module.ts",
+          "hash": "4036743550416198053",
+          "deps": [
+            "npm:@nestjs/axios",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/printer/printer.service.ts",
+          "hash": "6693688121838604141",
+          "deps": [
+            "npm:@nestjs/axios",
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@pdf-lib/fontkit",
+            "dto",
+            "utils",
+            "npm:async-retry",
+            "npm:pdf-lib",
+            "npm:puppeteer"
+          ]
+        },
+        {
+          "file": "apps/server/src/resume/decorators/resume.decorator.ts",
+          "hash": "15901130771456481513",
+          "deps": [
+            "npm:@nestjs/common",
+            "dto"
+          ]
+        },
+        {
+          "file": "apps/server/src/resume/guards/resume.guard.ts",
+          "hash": "16189300685384110798",
+          "deps": [
+            "npm:@nestjs/common",
+            "dto",
+            "utils",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/server/src/resume/resume.controller.ts",
+          "hash": "8424415210603742246",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger",
+            "npm:@prisma/client",
+            "dto",
+            "schema",
+            "utils",
+            "npm:zod-to-json-schema"
+          ]
+        },
+        {
+          "file": "apps/server/src/resume/resume.module.ts",
+          "hash": "9251095958422727571",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/resume/resume.service.ts",
+          "hash": "8226525475172621039",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@prisma/client",
+            "dto",
+            "schema",
+            "utils",
+            "npm:deepmerge",
+            "npm:nestjs-prisma"
+          ]
+        },
+        {
+          "file": "apps/server/src/storage/storage.controller.ts",
+          "hash": "12705977924900310974",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/platform-express",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/server/src/storage/storage.module.ts",
+          "hash": "14597313706058892444",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:multer",
+            "npm:nestjs-minio-client"
+          ]
+        },
+        {
+          "file": "apps/server/src/storage/storage.service.ts",
+          "hash": "2925356575105617761",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@paralleldrive/cuid2",
+            "npm:nestjs-minio-client",
+            "npm:sharp",
+            "npm:file-type"
+          ]
+        },
+        {
+          "file": "apps/server/src/translation/translation.controller.ts",
+          "hash": "10064020828430477467",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/translation/translation.module.ts",
+          "hash": "7815595957436016320",
+          "deps": [
+            "npm:@nestjs/axios",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/translation/translation.service.ts",
+          "hash": "15342276924589291693",
+          "deps": [
+            "npm:@nestjs/axios",
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "utils"
+          ]
+        },
+        {
+          "file": "apps/server/src/types/express.d.ts",
+          "hash": "15560486966150487361",
+          "deps": [
+            "npm:@prisma/client"
+          ]
+        },
+        {
+          "file": "apps/server/src/user/decorators/user.decorator.ts",
+          "hash": "18215109882489584538",
+          "deps": [
+            "npm:@nestjs/common",
+            "dto"
+          ]
+        },
+        {
+          "file": "apps/server/src/user/user.controller.ts",
+          "hash": "8584279297080758638",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger",
+            "npm:@prisma/client",
+            "dto",
+            "utils",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/server/src/user/user.module.ts",
+          "hash": "82482689349202787",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/server/src/user/user.service.ts",
+          "hash": "14714622285516707977",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@prisma/client",
+            "utils",
+            "npm:nestjs-prisma"
+          ]
+        },
+        {
+          "file": "apps/server/tsconfig.app.json",
+          "hash": "17728567067546091923"
+        },
+        {
+          "file": "apps/server/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/server/tsconfig.spec.json",
+          "hash": "6898991939206723030"
+        },
+        {
+          "file": "apps/server/webpack.config.js",
+          "hash": "1741996030928640101",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ],
       "parser": [
         {
           "file": "libs/parser/.eslintrc.json",
@@ -1275,6 +1626,517 @@
         {
           "file": "libs/parser/vite.config.ts",
           "hash": "10240243554968542795",
+          "deps": [
+            "npm:@nx/vite",
+            "npm:vite"
+          ]
+        }
+      ],
+      "hooks": [
+        {
+          "file": "libs/hooks/.eslintrc.json",
+          "hash": "4166942475683579515"
+        },
+        {
+          "file": "libs/hooks/package.json",
+          "hash": "8092307942609739503"
+        },
+        {
+          "file": "libs/hooks/project.json",
+          "hash": "9562043862544435243"
+        },
+        {
+          "file": "libs/hooks/src/hooks/use-breakpoint.ts",
+          "hash": "9485936630998694064",
+          "deps": [
+            "utils",
+            "npm:react",
+            "npm:use-breakpoint"
+          ]
+        },
+        {
+          "file": "libs/hooks/src/hooks/use-form-field.ts",
+          "hash": "15339093392106738476",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form"
+          ]
+        },
+        {
+          "file": "libs/hooks/src/hooks/use-password-toggle.ts",
+          "hash": "3081375084080534717",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/hooks/src/hooks/use-theme.ts",
+          "hash": "12223496232131800874",
+          "deps": [
+            "npm:react",
+            "npm:usehooks-ts"
+          ]
+        },
+        {
+          "file": "libs/hooks/src/index.ts",
+          "hash": "15153310531018775641"
+        },
+        {
+          "file": "libs/hooks/tsconfig.json",
+          "hash": "6996585143515498368"
+        },
+        {
+          "file": "libs/hooks/tsconfig.lib.json",
+          "hash": "2270014238471540235"
+        },
+        {
+          "file": "libs/hooks/tsconfig.spec.json",
+          "hash": "3905317577701168930"
+        },
+        {
+          "file": "libs/hooks/vite.config.ts",
+          "hash": "17342059192970653851",
+          "deps": [
+            "npm:@nx/vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:vite",
+            "npm:vite-plugin-dts"
+          ]
+        }
+      ],
+      "artboard": [
+        {
+          "file": "apps/artboard/.eslintrc.json",
+          "hash": "13191015176494656349"
+        },
+        {
+          "file": "apps/artboard/index.html",
+          "hash": "1362638886382915792"
+        },
+        {
+          "file": "apps/artboard/postcss.config.js",
+          "hash": "8460736116372828212"
+        },
+        {
+          "file": "apps/artboard/project.json",
+          "hash": "6088969813325233017"
+        },
+        {
+          "file": "apps/artboard/public/favicon.ico",
+          "hash": "14341031277693941069"
+        },
+        {
+          "file": "apps/artboard/public/favicon.png",
+          "hash": "11547571018533841104"
+        },
+        {
+          "file": "apps/artboard/public/favicon.svg",
+          "hash": "10014684485528885083"
+        },
+        {
+          "file": "apps/artboard/public/icon/dark.svg",
+          "hash": "4230213572436627847"
+        },
+        {
+          "file": "apps/artboard/public/icon/light.svg",
+          "hash": "17751395884775645948"
+        },
+        {
+          "file": "apps/artboard/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/artboard/src/components/page.tsx",
+          "hash": "4925527225876727870",
+          "deps": [
+            "hooks",
+            "utils"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/components/picture.tsx",
+          "hash": "18095664926472642298",
+          "deps": [
+            "utils"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/main.tsx",
+          "hash": "4499688534978453258",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/pages/artboard.tsx",
+          "hash": "14063196672432767835",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom",
+            "npm:webfontloader"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/pages/builder.tsx",
+          "hash": "6644083960814950643",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:framer-motion",
+            "npm:react",
+            "npm:react-zoom-pan-pinch"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/pages/preview.tsx",
+          "hash": "15387720680707085465",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/providers/index.tsx",
+          "hash": "2243621956821346530",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/router/index.tsx",
+          "hash": "7004668112294110410",
+          "deps": [
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/store/artboard.ts",
+          "hash": "13195338207300699481",
+          "deps": [
+            "schema",
+            "npm:zustand"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/styles/main.css",
+          "hash": "17057334978966904255"
+        },
+        {
+          "file": "apps/artboard/src/templates/azurill.tsx",
+          "hash": "11847417221059487187",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/bronzor.tsx",
+          "hash": "14262146240906955190",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/chikorita.tsx",
+          "hash": "5475474890684861255",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/ditto.tsx",
+          "hash": "16085100246704330632",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/gengar.tsx",
+          "hash": "3521823455566229010",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/glalie.tsx",
+          "hash": "6797453491192249030",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/index.tsx",
+          "hash": "5885115026345015968",
+          "deps": [
+            "utils"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/kakuna.tsx",
+          "hash": "1813381505960608192",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/leafish.tsx",
+          "hash": "17853070136532048808",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/nosepass.tsx",
+          "hash": "15454890349289722371",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/onyx.tsx",
+          "hash": "10475988606179926072",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/pikachu.tsx",
+          "hash": "12014858375250140128",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/templates/rhyhorn.tsx",
+          "hash": "5641148865007743228",
+          "deps": [
+            "schema",
+            "utils",
+            "npm:lodash.get",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/artboard/src/types/template.ts",
+          "hash": "4847969654140884616",
+          "deps": [
+            "schema"
+          ]
+        },
+        {
+          "file": "apps/artboard/tailwind.config.js",
+          "hash": "14109157089866771552",
+          "deps": [
+            "npm:@nx/react",
+            "npm:@tailwindcss/typography"
+          ]
+        },
+        {
+          "file": "apps/artboard/tsconfig.app.json",
+          "hash": "7232119452847825095"
+        },
+        {
+          "file": "apps/artboard/tsconfig.json",
+          "hash": "2843773793157498944"
+        },
+        {
+          "file": "apps/artboard/vite.config.ts",
+          "hash": "3730388779241239432",
+          "deps": [
+            "npm:@nx/vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:vite"
+          ]
+        }
+      ],
+      "utils": [
+        {
+          "file": "libs/utils/.eslintrc.json",
+          "hash": "10905178498824427073"
+        },
+        {
+          "file": "libs/utils/.swcrc",
+          "hash": "16777374493166073853"
+        },
+        {
+          "file": "libs/utils/package.json",
+          "hash": "4397131104390395501",
+          "deps": [
+            "npm:papaparse",
+            "npm:dayjs",
+            "npm:unique-names-generator",
+            "npm:clsx",
+            "npm:tailwind-merge",
+            "npm:@swc/helpers"
+          ]
+        },
+        {
+          "file": "libs/utils/project.json",
+          "hash": "10929562527551359994"
+        },
+        {
+          "file": "libs/utils/src/index.ts",
+          "hash": "6915695218756893177"
+        },
+        {
+          "file": "libs/utils/src/namespaces/array.ts",
+          "hash": "4159772194415614718"
+        },
+        {
+          "file": "libs/utils/src/namespaces/color.ts",
+          "hash": "8818356739145703856"
+        },
+        {
+          "file": "libs/utils/src/namespaces/csv.ts",
+          "hash": "6079330519862385233",
+          "deps": [
+            "npm:papaparse"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/date.ts",
+          "hash": "7471999952333829069",
+          "deps": [
+            "npm:dayjs"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/error.ts",
+          "hash": "17706130596965047839"
+        },
+        {
+          "file": "libs/utils/src/namespaces/fonts.ts",
+          "hash": "2395085900381059125"
+        },
+        {
+          "file": "libs/utils/src/namespaces/language.ts",
+          "hash": "12235596190436885805"
+        },
+        {
+          "file": "libs/utils/src/namespaces/number.ts",
+          "hash": "10374504014835865485"
+        },
+        {
+          "file": "libs/utils/src/namespaces/object.ts",
+          "hash": "13846597521363164500"
+        },
+        {
+          "file": "libs/utils/src/namespaces/page.ts",
+          "hash": "12083196025358069152"
+        },
+        {
+          "file": "libs/utils/src/namespaces/promise.ts",
+          "hash": "2613782231706592722"
+        },
+        {
+          "file": "libs/utils/src/namespaces/string.ts",
+          "hash": "2273423061981922686",
+          "deps": [
+            "npm:unique-names-generator"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/style.ts",
+          "hash": "11150682329830281567",
+          "deps": [
+            "npm:clsx",
+            "npm:tailwind-merge"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/template.ts",
+          "hash": "11752888691446360899"
+        },
+        {
+          "file": "libs/utils/src/namespaces/tests/array.test.ts",
+          "hash": "8884373983093614429",
+          "deps": [
+            "npm:vitest"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/tests/date.test.ts",
+          "hash": "14619324912124439817",
+          "deps": [
+            "npm:vitest"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/tests/number.test.ts",
+          "hash": "14855684733858427881",
+          "deps": [
+            "npm:vitest"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/tests/object.test.ts",
+          "hash": "651342149145078968",
+          "deps": [
+            "npm:vitest"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/tests/string.test.ts",
+          "hash": "14267206426079754307",
+          "deps": [
+            "npm:vitest"
+          ]
+        },
+        {
+          "file": "libs/utils/src/namespaces/types.ts",
+          "hash": "18340161246640282289"
+        },
+        {
+          "file": "libs/utils/tsconfig.json",
+          "hash": "12434429004007932236"
+        },
+        {
+          "file": "libs/utils/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/utils/tsconfig.spec.json",
+          "hash": "3905317577701168930"
+        },
+        {
+          "file": "libs/utils/vite.config.ts",
+          "hash": "10963280004388571022",
           "deps": [
             "npm:@nx/vite",
             "npm:vite"
@@ -2085,13 +2947,37 @@
           ]
         },
         {
+          "file": "apps/client/src/pages/builder/cover-letter/_components/form.tsx",
+          "hash": "13960003954298855559",
+          "deps": [
+            "npm:@hookform/resolvers",
+            "npm:react-hook-form",
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "apps/client/src/pages/builder/cover-letter/_components/preview.tsx",
+          "hash": "4473270021650885273"
+        },
+        {
+          "file": "apps/client/src/pages/builder/cover-letter/page.tsx",
+          "hash": "706754108499562229",
+          "deps": [
+            "npm:@lingui/macro",
+            "npm:react",
+            "npm:react-helmet-async"
+          ]
+        },
+        {
           "file": "apps/client/src/pages/builder/layout.tsx",
-          "hash": "2310073941211041451",
+          "hash": "3257676615493748992",
           "deps": [
             "hooks",
             "ui",
             "utils",
-            "npm:react-router-dom"
+            "npm:react-router-dom",
+            "npm:@lingui/macro",
+            "npm:@phosphor-icons/react"
           ]
         },
         {
@@ -3037,7 +3923,7 @@
         },
         {
           "file": "apps/client/src/router/index.tsx",
-          "hash": "5936566908047105688",
+          "hash": "9013825039181795382",
           "deps": [
             "npm:react-router-dom"
           ]
@@ -3184,6 +4070,20 @@
             "dto",
             "npm:@tanstack/react-query",
             "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/client/src/services/cover-letter/generate.ts",
+          "hash": "9982078762128841596",
+          "deps": [
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/client/src/services/cover-letter/print.ts",
+          "hash": "5066378676295385591",
+          "deps": [
+            "npm:@tanstack/react-query"
           ]
         },
         {
@@ -3401,6 +4301,13 @@
           ]
         },
         {
+          "file": "apps/client/src/stores/cover-letter.ts",
+          "hash": "2790036879269209867",
+          "deps": [
+            "npm:zustand"
+          ]
+        },
+        {
           "file": "apps/client/src/stores/dialog.ts",
           "hash": "10205822346092157140",
           "deps": [
@@ -3483,1259 +4390,442 @@
           ]
         }
       ],
-      "server": [
+      "ui": [
         {
-          "file": "apps/server/.eslintrc.json",
-          "hash": "18090616762053917544"
+          "file": "libs/ui/.eslintrc.json",
+          "hash": "7118798815127207976"
         },
         {
-          "file": "apps/server/jest.config.ts",
-          "hash": "6918528320339135621"
+          "file": "libs/ui/package.json",
+          "hash": "11403504523692712719"
         },
         {
-          "file": "apps/server/project.json",
-          "hash": "11823753465927185734"
+          "file": "libs/ui/postcss.config.js",
+          "hash": "15072321357058817229"
         },
         {
-          "file": "apps/server/src/app.module.ts",
-          "hash": "8723983515907564679",
+          "file": "libs/ui/project.json",
+          "hash": "14095077290658583749"
+        },
+        {
+          "file": "libs/ui/src/components/accordion.tsx",
+          "hash": "2037720603542807962",
           "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/core",
-            "npm:@nestjs/serve-static",
-            "npm:nest-raven",
-            "npm:nestjs-zod"
-          ]
-        },
-        {
-          "file": "apps/server/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/server/src/auth/auth.controller.ts",
-          "hash": "17469811317487268558",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs/swagger",
-            "dto",
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-accordion",
             "utils",
-            "npm:express"
+            "npm:react"
           ]
         },
         {
-          "file": "apps/server/src/auth/auth.module.ts",
-          "hash": "3114396140385897647",
+          "file": "libs/ui/src/components/alert-dialog.tsx",
+          "hash": "12413296694470616368",
           "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs/jwt",
-            "npm:@nestjs/passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/auth.service.ts",
-          "hash": "704897130314632738",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs/jwt",
-            "npm:@prisma/client",
-            "dto",
+            "npm:@radix-ui/react-alert-dialog",
             "utils",
-            "npm:bcryptjs",
-            "npm:otplib"
+            "npm:react"
           ]
         },
         {
-          "file": "apps/server/src/auth/guards/github.guard.ts",
-          "hash": "14750390728592143522",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/guards/google.guard.ts",
-          "hash": "13042052513782240358",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/guards/jwt.guard.ts",
-          "hash": "10489447177092028112",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/guards/local.guard.ts",
-          "hash": "11777836862100987120",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/guards/optional.guard.ts",
-          "hash": "1229565013591210477",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport",
-            "dto"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/guards/refresh.guard.ts",
-          "hash": "893533241282590759",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/guards/two-factor.guard.ts",
-          "hash": "16825427204864375335",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/strategy/dummy.strategy.ts",
-          "hash": "11953245001518445504",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport",
-            "npm:passport"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/strategy/github.strategy.ts",
-          "hash": "2739711374867705284",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport",
-            "npm:@prisma/client",
-            "utils",
-            "npm:passport-github2"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/strategy/google.strategy.ts",
-          "hash": "1783731157069147795",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport",
-            "npm:@prisma/client",
-            "utils",
-            "npm:passport-google-oauth20"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/strategy/jwt.strategy.ts",
-          "hash": "8212452753780116784",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs/passport",
-            "npm:express",
-            "npm:passport-jwt"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/strategy/local.strategy.ts",
-          "hash": "6950640422264408376",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/passport",
-            "utils",
-            "npm:passport-local"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/strategy/refresh.strategy.ts",
-          "hash": "18028940907507907915",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs/passport",
-            "npm:express",
-            "npm:passport-jwt"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/strategy/two-factor.strategy.ts",
-          "hash": "14014474470799581585",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs/passport",
-            "npm:express",
-            "npm:passport-jwt"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/utils/cookie.ts",
-          "hash": "294716588526085144",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/server/src/auth/utils/payload.ts",
-          "hash": "15478728693376860747",
-          "deps": [
-            "schema",
-            "npm:nestjs-zod"
-          ]
-        },
-        {
-          "file": "apps/server/src/config/config.module.ts",
-          "hash": "5537123787934532176",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config"
-          ]
-        },
-        {
-          "file": "apps/server/src/config/schema.ts",
-          "hash": "7044717316845586965",
-          "deps": [
-            "npm:nestjs-zod"
-          ]
-        },
-        {
-          "file": "apps/server/src/contributors/contributors.controller.ts",
-          "hash": "1550573201127705156",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/contributors/contributors.module.ts",
-          "hash": "13719525956194900926",
-          "deps": [
-            "npm:@nestjs/axios",
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/contributors/contributors.service.ts",
-          "hash": "11889071708786625215",
-          "deps": [
-            "npm:@nestjs/axios",
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "dto"
-          ]
-        },
-        {
-          "file": "apps/server/src/database/database.module.ts",
-          "hash": "6123975288688041958",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:nestjs-prisma"
-          ]
-        },
-        {
-          "file": "apps/server/src/feature/feature.controller.ts",
-          "hash": "3675009712749151124",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/feature/feature.module.ts",
-          "hash": "14120888947307257749",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/feature/feature.service.ts",
-          "hash": "7810264816942461463",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config"
-          ]
-        },
-        {
-          "file": "apps/server/src/health/browser.health.ts",
-          "hash": "9489982795138628322",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/terminus"
-          ]
-        },
-        {
-          "file": "apps/server/src/health/database.health.ts",
-          "hash": "13727314099810705613",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/terminus",
-            "npm:nestjs-prisma"
-          ]
-        },
-        {
-          "file": "apps/server/src/health/health.controller.ts",
-          "hash": "16711790807592412143",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/swagger",
-            "npm:@nestjs/terminus"
-          ]
-        },
-        {
-          "file": "apps/server/src/health/health.module.ts",
-          "hash": "12274061778272252512",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/terminus"
-          ]
-        },
-        {
-          "file": "apps/server/src/health/storage.health.ts",
-          "hash": "2736104058689736002",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/terminus"
-          ]
-        },
-        {
-          "file": "apps/server/src/mail/mail.module.ts",
-          "hash": "15184470399446316180",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs-modules/mailer",
-            "npm:nodemailer"
-          ]
-        },
-        {
-          "file": "apps/server/src/mail/mail.service.ts",
-          "hash": "2885622658860708379",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs-modules/mailer"
-          ]
-        },
-        {
-          "file": "apps/server/src/main.ts",
-          "hash": "9284269058136427263",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@nestjs/core",
-            "npm:@nestjs/platform-express",
-            "npm:@nestjs/swagger",
-            "npm:cookie-parser",
-            "npm:helmet",
-            "npm:nestjs-zod"
-          ]
-        },
-        {
-          "file": "apps/server/src/printer/printer.module.ts",
-          "hash": "4036743550416198053",
-          "deps": [
-            "npm:@nestjs/axios",
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/printer/printer.service.ts",
-          "hash": "619310655851025062",
-          "deps": [
-            "npm:@nestjs/axios",
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@pdf-lib/fontkit",
-            "dto",
-            "utils",
-            "npm:async-retry",
-            "npm:pdf-lib",
-            "npm:puppeteer"
-          ]
-        },
-        {
-          "file": "apps/server/src/resume/decorators/resume.decorator.ts",
-          "hash": "15901130771456481513",
-          "deps": [
-            "npm:@nestjs/common",
-            "dto"
-          ]
-        },
-        {
-          "file": "apps/server/src/resume/guards/resume.guard.ts",
-          "hash": "16189300685384110798",
-          "deps": [
-            "npm:@nestjs/common",
-            "dto",
-            "utils",
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/server/src/resume/resume.controller.ts",
-          "hash": "8424415210603742246",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/swagger",
-            "npm:@prisma/client",
-            "dto",
-            "schema",
-            "utils",
-            "npm:zod-to-json-schema"
-          ]
-        },
-        {
-          "file": "apps/server/src/resume/resume.module.ts",
-          "hash": "9251095958422727571",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/resume/resume.service.ts",
-          "hash": "8226525475172621039",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@prisma/client",
-            "dto",
-            "schema",
-            "utils",
-            "npm:deepmerge",
-            "npm:nestjs-prisma"
-          ]
-        },
-        {
-          "file": "apps/server/src/storage/storage.controller.ts",
-          "hash": "12705977924900310974",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/platform-express",
-            "npm:@nestjs/swagger"
-          ]
-        },
-        {
-          "file": "apps/server/src/storage/storage.module.ts",
-          "hash": "14597313706058892444",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:multer",
-            "npm:nestjs-minio-client"
-          ]
-        },
-        {
-          "file": "apps/server/src/storage/storage.service.ts",
-          "hash": "8569459692136000501",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "npm:@paralleldrive/cuid2",
-            "npm:nestjs-minio-client",
-            "npm:sharp"
-          ]
-        },
-        {
-          "file": "apps/server/src/translation/translation.controller.ts",
-          "hash": "10064020828430477467",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/translation/translation.module.ts",
-          "hash": "7815595957436016320",
-          "deps": [
-            "npm:@nestjs/axios",
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/translation/translation.service.ts",
-          "hash": "15342276924589291693",
-          "deps": [
-            "npm:@nestjs/axios",
-            "npm:@nestjs/common",
-            "npm:@nestjs/config",
-            "utils"
-          ]
-        },
-        {
-          "file": "apps/server/src/types/express.d.ts",
-          "hash": "15560486966150487361",
-          "deps": [
-            "npm:@prisma/client"
-          ]
-        },
-        {
-          "file": "apps/server/src/user/decorators/user.decorator.ts",
-          "hash": "18215109882489584538",
-          "deps": [
-            "npm:@nestjs/common",
-            "dto"
-          ]
-        },
-        {
-          "file": "apps/server/src/user/user.controller.ts",
-          "hash": "8584279297080758638",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/swagger",
-            "npm:@prisma/client",
-            "dto",
-            "utils",
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/server/src/user/user.module.ts",
-          "hash": "82482689349202787",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/server/src/user/user.service.ts",
-          "hash": "14714622285516707977",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@prisma/client",
-            "utils",
-            "npm:nestjs-prisma"
-          ]
-        },
-        {
-          "file": "apps/server/tsconfig.app.json",
-          "hash": "17728567067546091923"
-        },
-        {
-          "file": "apps/server/tsconfig.json",
-          "hash": "3490524966360018312"
-        },
-        {
-          "file": "apps/server/tsconfig.spec.json",
-          "hash": "6898991939206723030"
-        },
-        {
-          "file": "apps/server/webpack.config.js",
-          "hash": "1741996030928640101",
-          "deps": [
-            "npm:@nx/webpack"
-          ]
-        }
-      ],
-      "schema": [
-        {
-          "file": "libs/schema/.eslintrc.json",
-          "hash": "10905178498824427073"
-        },
-        {
-          "file": "libs/schema/.swcrc",
-          "hash": "16777374493166073853"
-        },
-        {
-          "file": "libs/schema/package.json",
-          "hash": "17321268349504614958",
+          "file": "libs/ui/src/components/alert.tsx",
+          "hash": "10277229419622998028",
           "deps": [
             "utils",
-            "npm:zod",
-            "npm:@paralleldrive/cuid2",
-            "npm:@swc/helpers"
+            "npm:class-variance-authority",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/project.json",
-          "hash": "3660265183686260541"
-        },
-        {
-          "file": "libs/schema/src/basics/custom.ts",
-          "hash": "831599206969838142",
+          "file": "libs/ui/src/components/aspect-ratio.tsx",
+          "hash": "13213775543408763760",
           "deps": [
-            "npm:zod"
+            "npm:@radix-ui/react-aspect-ratio"
           ]
         },
         {
-          "file": "libs/schema/src/basics/index.ts",
-          "hash": "8573708198706920208",
+          "file": "libs/ui/src/components/avatar.tsx",
+          "hash": "14048366838710880954",
           "deps": [
-            "npm:zod"
+            "npm:@radix-ui/react-avatar",
+            "utils",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/index.ts",
-          "hash": "5444514367642710340",
+          "file": "libs/ui/src/components/badge-input.tsx",
+          "hash": "329960483557062377",
           "deps": [
-            "npm:zod"
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/metadata/index.ts",
-          "hash": "4836501207517276794",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/sample.ts",
-          "hash": "14700867050163196044"
-        },
-        {
-          "file": "libs/schema/src/sections/award.ts",
-          "hash": "10264190314138766217",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/sections/certification.ts",
-          "hash": "8090965389002026442",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/sections/custom-section.ts",
-          "hash": "13078451413776718263",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/sections/education.ts",
-          "hash": "13739630387234899627",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/sections/experience.ts",
-          "hash": "8048435035027117551",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/sections/index.ts",
-          "hash": "7882965976974539241",
+          "file": "libs/ui/src/components/badge.tsx",
+          "hash": "7629339537764848879",
           "deps": [
             "utils",
-            "npm:zod"
+            "npm:class-variance-authority"
           ]
         },
         {
-          "file": "libs/schema/src/sections/interest.ts",
-          "hash": "17054304163677612105",
+          "file": "libs/ui/src/components/button.tsx",
+          "hash": "17378356696228869820",
           "deps": [
-            "npm:zod"
+            "npm:@radix-ui/react-slot",
+            "utils",
+            "npm:class-variance-authority",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/sections/language.ts",
-          "hash": "3092854228452384829",
+          "file": "libs/ui/src/components/card.tsx",
+          "hash": "6290503975195074428",
           "deps": [
-            "npm:zod"
+            "utils",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/sections/profile.ts",
-          "hash": "9159362368632258153",
+          "file": "libs/ui/src/components/checkbox.tsx",
+          "hash": "10220801610309834576",
           "deps": [
-            "npm:zod"
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-checkbox",
+            "utils",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/sections/project.ts",
-          "hash": "3785391943703045951",
+          "file": "libs/ui/src/components/combobox.tsx",
+          "hash": "5218285211370902248",
           "deps": [
-            "npm:zod"
+            "npm:@phosphor-icons/react",
+            "utils",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/sections/publication.ts",
-          "hash": "15845881947444457905",
+          "file": "libs/ui/src/components/command.tsx",
+          "hash": "6289763599235601206",
           "deps": [
-            "npm:zod"
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-dialog",
+            "utils",
+            "npm:cmdk",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/sections/reference.ts",
-          "hash": "116490559630060543",
+          "file": "libs/ui/src/components/context-menu.tsx",
+          "hash": "13812780778306150469",
           "deps": [
-            "npm:zod"
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-context-menu",
+            "utils",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/sections/skill.ts",
-          "hash": "8301653707501587202",
+          "file": "libs/ui/src/components/dialog.tsx",
+          "hash": "16926799458583599225",
           "deps": [
-            "npm:zod"
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-dialog",
+            "utils",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/sections/volunteer.ts",
-          "hash": "15469804711941817930",
+          "file": "libs/ui/src/components/dropdown-menu.tsx",
+          "hash": "10767999373272708966",
           "deps": [
-            "npm:zod"
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-dropdown-menu",
+            "utils",
+            "npm:react"
           ]
         },
         {
-          "file": "libs/schema/src/shared/id.ts",
-          "hash": "12371910861242898021",
+          "file": "libs/ui/src/components/form.tsx",
+          "hash": "4780093769017178487",
           "deps": [
-            "npm:@paralleldrive/cuid2",
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/shared/index.ts",
-          "hash": "12753253678802985827"
-        },
-        {
-          "file": "libs/schema/src/shared/item.ts",
-          "hash": "7879985572272558073",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/src/shared/url.ts",
-          "hash": "9485765620747948345",
-          "deps": [
-            "npm:zod"
-          ]
-        },
-        {
-          "file": "libs/schema/tsconfig.json",
-          "hash": "5840880287502376438"
-        },
-        {
-          "file": "libs/schema/tsconfig.lib.json",
-          "hash": "3632393694954060084"
-        },
-        {
-          "file": "libs/schema/tsconfig.spec.json",
-          "hash": "3905317577701168930"
-        },
-        {
-          "file": "libs/schema/vite.config.ts",
-          "hash": "9746681103306424653",
-          "deps": [
-            "npm:@nx/vite",
-            "npm:vite"
-          ]
-        }
-      ],
-      "utils": [
-        {
-          "file": "libs/utils/.eslintrc.json",
-          "hash": "10905178498824427073"
-        },
-        {
-          "file": "libs/utils/.swcrc",
-          "hash": "16777374493166073853"
-        },
-        {
-          "file": "libs/utils/package.json",
-          "hash": "4397131104390395501",
-          "deps": [
-            "npm:papaparse",
-            "npm:dayjs",
-            "npm:unique-names-generator",
-            "npm:clsx",
-            "npm:tailwind-merge",
-            "npm:@swc/helpers"
-          ]
-        },
-        {
-          "file": "libs/utils/project.json",
-          "hash": "10929562527551359994"
-        },
-        {
-          "file": "libs/utils/src/index.ts",
-          "hash": "6915695218756893177"
-        },
-        {
-          "file": "libs/utils/src/namespaces/array.ts",
-          "hash": "4159772194415614718"
-        },
-        {
-          "file": "libs/utils/src/namespaces/color.ts",
-          "hash": "8818356739145703856"
-        },
-        {
-          "file": "libs/utils/src/namespaces/csv.ts",
-          "hash": "6079330519862385233",
-          "deps": [
-            "npm:papaparse"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/date.ts",
-          "hash": "7471999952333829069",
-          "deps": [
-            "npm:dayjs"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/error.ts",
-          "hash": "17706130596965047839"
-        },
-        {
-          "file": "libs/utils/src/namespaces/fonts.ts",
-          "hash": "2395085900381059125"
-        },
-        {
-          "file": "libs/utils/src/namespaces/language.ts",
-          "hash": "12235596190436885805"
-        },
-        {
-          "file": "libs/utils/src/namespaces/number.ts",
-          "hash": "10374504014835865485"
-        },
-        {
-          "file": "libs/utils/src/namespaces/object.ts",
-          "hash": "13846597521363164500"
-        },
-        {
-          "file": "libs/utils/src/namespaces/page.ts",
-          "hash": "12083196025358069152"
-        },
-        {
-          "file": "libs/utils/src/namespaces/promise.ts",
-          "hash": "2613782231706592722"
-        },
-        {
-          "file": "libs/utils/src/namespaces/string.ts",
-          "hash": "2273423061981922686",
-          "deps": [
-            "npm:unique-names-generator"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/style.ts",
-          "hash": "11150682329830281567",
-          "deps": [
-            "npm:clsx",
-            "npm:tailwind-merge"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/template.ts",
-          "hash": "11752888691446360899"
-        },
-        {
-          "file": "libs/utils/src/namespaces/tests/array.test.ts",
-          "hash": "8884373983093614429",
-          "deps": [
-            "npm:vitest"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/tests/date.test.ts",
-          "hash": "14619324912124439817",
-          "deps": [
-            "npm:vitest"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/tests/number.test.ts",
-          "hash": "14855684733858427881",
-          "deps": [
-            "npm:vitest"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/tests/object.test.ts",
-          "hash": "651342149145078968",
-          "deps": [
-            "npm:vitest"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/tests/string.test.ts",
-          "hash": "14267206426079754307",
-          "deps": [
-            "npm:vitest"
-          ]
-        },
-        {
-          "file": "libs/utils/src/namespaces/types.ts",
-          "hash": "18340161246640282289"
-        },
-        {
-          "file": "libs/utils/tsconfig.json",
-          "hash": "12434429004007932236"
-        },
-        {
-          "file": "libs/utils/tsconfig.lib.json",
-          "hash": "3632393694954060084"
-        },
-        {
-          "file": "libs/utils/tsconfig.spec.json",
-          "hash": "3905317577701168930"
-        },
-        {
-          "file": "libs/utils/vite.config.ts",
-          "hash": "10963280004388571022",
-          "deps": [
-            "npm:@nx/vite",
-            "npm:vite"
-          ]
-        }
-      ],
-      "artboard": [
-        {
-          "file": "apps/artboard/.eslintrc.json",
-          "hash": "13191015176494656349"
-        },
-        {
-          "file": "apps/artboard/index.html",
-          "hash": "1362638886382915792"
-        },
-        {
-          "file": "apps/artboard/postcss.config.js",
-          "hash": "8460736116372828212"
-        },
-        {
-          "file": "apps/artboard/project.json",
-          "hash": "6088969813325233017"
-        },
-        {
-          "file": "apps/artboard/public/favicon.ico",
-          "hash": "14341031277693941069"
-        },
-        {
-          "file": "apps/artboard/public/favicon.png",
-          "hash": "11547571018533841104"
-        },
-        {
-          "file": "apps/artboard/public/favicon.svg",
-          "hash": "10014684485528885083"
-        },
-        {
-          "file": "apps/artboard/public/icon/dark.svg",
-          "hash": "4230213572436627847"
-        },
-        {
-          "file": "apps/artboard/public/icon/light.svg",
-          "hash": "17751395884775645948"
-        },
-        {
-          "file": "apps/artboard/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/artboard/src/components/page.tsx",
-          "hash": "4925527225876727870",
-          "deps": [
+            "npm:@radix-ui/react-label",
+            "npm:@radix-ui/react-slot",
             "hooks",
-            "utils"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/components/picture.tsx",
-          "hash": "18095664926472642298",
-          "deps": [
-            "utils"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/main.tsx",
-          "hash": "4499688534978453258",
-          "deps": [
-            "npm:react",
-            "npm:react-dom",
-            "npm:react-router-dom"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/pages/artboard.tsx",
-          "hash": "14063196672432767835",
-          "deps": [
-            "npm:react",
-            "npm:react-router-dom",
-            "npm:webfontloader"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/pages/builder.tsx",
-          "hash": "6644083960814950643",
-          "deps": [
-            "schema",
             "utils",
-            "npm:framer-motion",
-            "npm:react",
-            "npm:react-zoom-pan-pinch"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/pages/preview.tsx",
-          "hash": "15387720680707085465",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/providers/index.tsx",
-          "hash": "2243621956821346530",
-          "deps": [
-            "npm:react",
-            "npm:react-router-dom"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/router/index.tsx",
-          "hash": "7004668112294110410",
-          "deps": [
-            "npm:react-router-dom"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/store/artboard.ts",
-          "hash": "13195338207300699481",
-          "deps": [
-            "schema",
-            "npm:zustand"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/styles/main.css",
-          "hash": "17057334978966904255"
-        },
-        {
-          "file": "apps/artboard/src/templates/azurill.tsx",
-          "hash": "11847417221059487187",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/bronzor.tsx",
-          "hash": "14262146240906955190",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/chikorita.tsx",
-          "hash": "5475474890684861255",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/ditto.tsx",
-          "hash": "16085100246704330632",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/gengar.tsx",
-          "hash": "3521823455566229010",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/glalie.tsx",
-          "hash": "6797453491192249030",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/index.tsx",
-          "hash": "5885115026345015968",
-          "deps": [
-            "utils"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/kakuna.tsx",
-          "hash": "1813381505960608192",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/leafish.tsx",
-          "hash": "17853070136532048808",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/nosepass.tsx",
-          "hash": "15454890349289722371",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/onyx.tsx",
-          "hash": "10475988606179926072",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/pikachu.tsx",
-          "hash": "12014858375250140128",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/templates/rhyhorn.tsx",
-          "hash": "5641148865007743228",
-          "deps": [
-            "schema",
-            "utils",
-            "npm:lodash.get",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/artboard/src/types/template.ts",
-          "hash": "4847969654140884616",
-          "deps": [
-            "schema"
-          ]
-        },
-        {
-          "file": "apps/artboard/tailwind.config.js",
-          "hash": "14109157089866771552",
-          "deps": [
-            "npm:@nx/react",
-            "npm:@tailwindcss/typography"
-          ]
-        },
-        {
-          "file": "apps/artboard/tsconfig.app.json",
-          "hash": "7232119452847825095"
-        },
-        {
-          "file": "apps/artboard/tsconfig.json",
-          "hash": "2843773793157498944"
-        },
-        {
-          "file": "apps/artboard/vite.config.ts",
-          "hash": "3730388779241239432",
-          "deps": [
-            "npm:@nx/vite",
-            "npm:@vitejs/plugin-react-swc",
-            "npm:vite"
-          ]
-        }
-      ],
-      "hooks": [
-        {
-          "file": "libs/hooks/.eslintrc.json",
-          "hash": "4166942475683579515"
-        },
-        {
-          "file": "libs/hooks/package.json",
-          "hash": "8092307942609739503"
-        },
-        {
-          "file": "libs/hooks/project.json",
-          "hash": "9562043862544435243"
-        },
-        {
-          "file": "libs/hooks/src/hooks/use-breakpoint.ts",
-          "hash": "9485936630998694064",
-          "deps": [
-            "utils",
-            "npm:react",
-            "npm:use-breakpoint"
-          ]
-        },
-        {
-          "file": "libs/hooks/src/hooks/use-form-field.ts",
-          "hash": "15339093392106738476",
-          "deps": [
             "npm:react",
             "npm:react-hook-form"
           ]
         },
         {
-          "file": "libs/hooks/src/hooks/use-password-toggle.ts",
-          "hash": "3081375084080534717",
+          "file": "libs/ui/src/components/hover-card.tsx",
+          "hash": "7257560986350655127",
           "deps": [
+            "npm:@radix-ui/react-hover-card",
+            "utils",
             "npm:react"
           ]
         },
         {
-          "file": "libs/hooks/src/hooks/use-theme.ts",
-          "hash": "12223496232131800874",
+          "file": "libs/ui/src/components/index.ts",
+          "hash": "257289429482442282"
+        },
+        {
+          "file": "libs/ui/src/components/input.tsx",
+          "hash": "6007236308824161518",
           "deps": [
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/label.tsx",
+          "hash": "6513445223075937630",
+          "deps": [
+            "npm:@radix-ui/react-label",
+            "utils",
+            "npm:class-variance-authority",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/popover.tsx",
+          "hash": "1156107646197962302",
+          "deps": [
+            "npm:@radix-ui/react-popover",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/portal.tsx",
+          "hash": "14360132747506065174",
+          "deps": [
+            "npm:@radix-ui/react-portal"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/resizable-panel.tsx",
+          "hash": "3315010528393279759",
+          "deps": [
+            "npm:@phosphor-icons/react",
+            "utils",
+            "npm:react-resizable-panels"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/rich-input.tsx",
+          "hash": "336338425095964541",
+          "deps": [
+            "npm:@hookform/resolvers",
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-popover",
+            "utils",
+            "npm:@tiptap/extension-highlight",
+            "npm:@tiptap/extension-image",
+            "npm:@tiptap/extension-link",
+            "npm:@tiptap/extension-text-align",
+            "npm:@tiptap/extension-underline",
+            "npm:@tiptap/react",
+            "npm:@tiptap/starter-kit",
+            "npm:react",
+            "npm:react-hook-form",
+            "npm:zod"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/scroll-area.tsx",
+          "hash": "5862051200958223139",
+          "deps": [
+            "npm:@radix-ui/react-scroll-area",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/select.tsx",
+          "hash": "9355836438193057635",
+          "deps": [
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-select",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/separator.tsx",
+          "hash": "3214515836286948120",
+          "deps": [
+            "npm:@radix-ui/react-separator",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/sheet.tsx",
+          "hash": "7450894883777990231",
+          "deps": [
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-dialog",
+            "utils",
+            "npm:class-variance-authority",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/shortcut.tsx",
+          "hash": "14636710048417107787",
+          "deps": [
+            "utils",
             "npm:react",
             "npm:usehooks-ts"
           ]
         },
         {
-          "file": "libs/hooks/src/index.ts",
-          "hash": "15153310531018775641"
+          "file": "libs/ui/src/components/skeleton.tsx",
+          "hash": "18190638686456598854",
+          "deps": [
+            "utils"
+          ]
         },
         {
-          "file": "libs/hooks/tsconfig.json",
+          "file": "libs/ui/src/components/slider.tsx",
+          "hash": "4324060983110413577",
+          "deps": [
+            "npm:@radix-ui/react-slider",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/switch.tsx",
+          "hash": "2056301828617487753",
+          "deps": [
+            "npm:@radix-ui/react-switch",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/tabs.tsx",
+          "hash": "2128053415481640116",
+          "deps": [
+            "npm:@radix-ui/react-tabs",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/toast.tsx",
+          "hash": "12355343790813975977",
+          "deps": [
+            "npm:@phosphor-icons/react",
+            "npm:@radix-ui/react-toast",
+            "utils",
+            "npm:class-variance-authority",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/toggle-group.tsx",
+          "hash": "17261493381688115134",
+          "deps": [
+            "npm:@radix-ui/react-toggle-group",
+            "utils",
+            "npm:class-variance-authority",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/toggle.tsx",
+          "hash": "17290642745126319100",
+          "deps": [
+            "npm:@radix-ui/react-toggle",
+            "utils",
+            "npm:class-variance-authority",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/components/tooltip.tsx",
+          "hash": "2960565526801747765",
+          "deps": [
+            "npm:@radix-ui/react-tooltip",
+            "utils",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/ui/src/index.ts",
+          "hash": "4015617590384224623"
+        },
+        {
+          "file": "libs/ui/src/variants/alert.ts",
+          "hash": "36121954774299095",
+          "deps": [
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "libs/ui/src/variants/badge.ts",
+          "hash": "1735570582978383462",
+          "deps": [
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "libs/ui/src/variants/button.ts",
+          "hash": "6173528085704059201",
+          "deps": [
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "libs/ui/src/variants/index.ts",
+          "hash": "2648058627744963833"
+        },
+        {
+          "file": "libs/ui/src/variants/sheet.ts",
+          "hash": "6766996747465083431",
+          "deps": [
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "libs/ui/src/variants/toast.ts",
+          "hash": "13559306200805860668",
+          "deps": [
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "libs/ui/src/variants/toggle.ts",
+          "hash": "15607392271952187667",
+          "deps": [
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "libs/ui/tailwind.config.js",
+          "hash": "10456122484538361574",
+          "deps": [
+            "npm:@nx/react"
+          ]
+        },
+        {
+          "file": "libs/ui/tsconfig.json",
           "hash": "6996585143515498368"
         },
         {
-          "file": "libs/hooks/tsconfig.lib.json",
-          "hash": "2270014238471540235"
+          "file": "libs/ui/tsconfig.lib.json",
+          "hash": "1480945559902334742"
         },
         {
-          "file": "libs/hooks/tsconfig.spec.json",
+          "file": "libs/ui/tsconfig.spec.json",
           "hash": "3905317577701168930"
         },
         {
-          "file": "libs/hooks/vite.config.ts",
-          "hash": "17342059192970653851",
+          "file": "libs/ui/vite.config.ts",
+          "hash": "8851780436073813066",
           "deps": [
             "npm:@nx/vite",
             "npm:@vitejs/plugin-react-swc",
