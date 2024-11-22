@@ -1,0 +1,21 @@
+{
+  "CORSRules": [
+    {
+      "AllowedOrigins": [
+        "https://appractic.com",
+        "https://www.appractic.com",
+        "https://storage.appractic.com"
+      ],
+      "AllowedMethods": ["GET", "PUT", "POST", "DELETE"],
+      "AllowedHeaders": [
+        "Authorization",
+        "Content-Type",
+        "Origin",
+        "Accept",
+        "X-Requested-With"
+      ],
+      "ExposeHeaders": ["ETag"],
+      "MaxAgeSeconds": 3600
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  chrome:
+    image: browserless/chrome:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - MAX_CONCURRENT_SESSIONS=10
+      - CONNECTION_TIMEOUT=300000
+      - MAX_QUEUE_LENGTH=20
+      - PREBOOT_CHROME=true
+      - KEEP_ALIVE=true
+      - WORKSPACE_DELETE_EXPIRED=true
+      - ENABLE_CORS=true
+      - CHROME_REFRESH_TIME=3600000
+      - DEFAULT_BLOCK_ADS=true
+      - FUNCTION_ENABLE_INCOGNITO_MODE=true
+      - ENABLE_DEBUGGER=false
+      - CHROME_STABLE_LAUNCH_FLAGS=["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
+    volumes:
+      - chrome-data:/usr/src/app/data
+
+volumes:
+  chrome-data:

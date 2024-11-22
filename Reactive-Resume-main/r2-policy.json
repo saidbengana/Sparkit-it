@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyDangerousFiles",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": ["s3:PutObject", "s3:GetObject"],
+      "Resource": [
+        "arn:aws:s3:::spark-it/*/*.exe",
+        "arn:aws:s3:::spark-it/*/*.dll",
+        "arn:aws:s3:::spark-it/*/*.bat",
+        "arn:aws:s3:::spark-it/*/*.cmd",
+        "arn:aws:s3:::spark-it/*/*.sh",
+        "arn:aws:s3:::spark-it/*/*.msi",
+        "arn:aws:s3:::spark-it/*/*.com"
+      ]
+    },
+    {
+      "Sid": "PublicRead",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": ["s3:GetObject"],
+      "Resource": [
+        "arn:aws:s3:::spark-it/*/pictures/*.(jpg|jpeg|png|gif)",
+        "arn:aws:s3:::spark-it/*/previews/*.(jpg|jpeg|png|pdf)",
+        "arn:aws:s3:::spark-it/*/resumes/*.(pdf)"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:Referer": [
+            "https://appractic.com/*",
+            "https://www.appractic.com/*",
+            "https://storage.appractic.com/*"
+          ]
+        }
+      }
+    }
+  ]
+}

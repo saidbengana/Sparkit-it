@@ -1,0 +1,151 @@
+
+<--- Last few GCs --->
+
+[9036:0000025DC375F000]      133 ms: Scavenge 5.2 (6.7) -> 4.7 (7.2) MB, pooled: 0 MB, 1.40 / 0.00 ms  (average mu = 1.000, current mu = 1.000) allocation failure; 
+[9036:0000025DC375F000]      172 ms: Scavenge 5.6 (7.2) -> 5.0 (7.5) MB, pooled: 0 MB, 0.92 / 0.00 ms  (average mu = 1.000, current mu = 1.000) allocation failure; 
+[9036:0000025DC375F000]      233 ms: Scavenge 5.9 (7.5) -> 5.1 (9.7) MB, pooled: 0 MB, 0.83 / 0.00 ms  (average mu = 1.000, current mu = 1.000) allocation failure; 
+
+
+<--- JS stacktrace --->
+
+
+<--- Last few GCs --->
+
+[12932:0000025DE498B000]      147 ms: Scavenge 5.2 (6.7) -> 4.8 (7.2) MB, pooled: 0 MB, 1.36 / 0.00 ms  (average mu = 1.000, current mu = 1.000) allocation failure; 
+[12932:0000025DE498B000]      186 ms: Scavenge 5.7 (7.2) -> 5.0 (7.5) MB, pooled: 0 MB, 0.98 / 0.00 ms  (average mu = 1.000, current mu = 1.000) allocation failure; 
+[12932:0000025DE498B000]      224 ms: Scavenge 5.9 (7.5) -> 5.1 (9.5) MB, pooled: 0 MB, 1.40 / 0.00 ms  (average mu = 1.000, current mu = 1.000) allocation failure; 
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Zone Allocation failed - process out of memory
+----- Native stack trace -----
+
+FATAL ERROR: Zone Allocation failed - process out of memory
+----- Native stack trace -----
+
+ 1: 00007FF640F4BD7B 
+ 2: 00007FF640EB4BC8 
+ 3: 00007FF641A42C31 
+ 4: 00007FF641A2FA36 
+ 5: 00007FF6414F315E 
+ 6: 00007FF6415F29F6 
+ 7: 00007FF641604234 
+ 8: 00007FF6416018D9 
+ 9: 00007FF6415F5C27 
+10: 00007FF6416036CB 
+11: 00007FF641602D5D 
+12: 00007FF6416028D3 
+13: 00007FF6416041C9 
+14: 00007FF6416018D9 
+15: 00007FF6415F5C27 
+16: 00007FF6415F4BCD 
+17: 00007FF6416013A0 
+18: 00007FF641601917 
+19: 00007FF6415F5C27 
+20: 00007FF6415FB3EE 
+21: 00007FF6415FB8AE 
+22: 00007FF6416076F1 
+23: 00007FF6415FED78 
+24: 00007FF6415F587A 
+25: 00007FF6415F5E37 
+26: 00007FF6415F5C74 
+27: 00007FF6415FB3EE 
+28: 00007FF6416042E6 
+29: 00007FF6416018D9 
+30: 00007FF6415F5C27 
+31: 00007FF6415FB3EE 
+32: 00007FF6415FB8AE 
+33: 00007FF6416076F1 
+34: 00007FF6415FED78 
+35: 00007FF6415FDFE5 
+36: 00007FF6415FF769 
+37: 00007FF6415F0764 
+38: 00007FF64160482B 
+39: 00007FF6415E9D0C 
+40: 00007FF6419A7BCD 
+41: 00007FF6419AD178 
+42: 00007FF641A2A6D7 
+43: 00007FF641A2A424 
+44: 00007FF640EC2B24 
+45: 00007FF640EC3114 
+46: 00007FF641A60438 
+47: 00007FF5C1C97AB6 
+RpcExitError: Process 9036 exited with code 134
+[31mIssues checking service aborted - probably out of memory. Check the `memoryLimit` option in the ForkTsCheckerWebpackPlugin configuration.[39m
+[31mIf increasing the memory doesn't solve the issue, it's most probably a bug in the TypeScript.[39m
+ 1: 00007FF640F4BD7B node::SetCppgcReference+16011
+ 2: 00007FF640EB4BC8 DSA_meth_get_flags+92344
+ 3: 00007FF641A42C31 v8::Isolate::ReportExternalAllocationLimitReached+65
+ 4: 00007FF641A2FA36 v8::Function::Experimental_IsNopFunction+2918
+ 5: 00007FF6414F315E v8::SnapshotCreator::GetIsolate+53054
+ 6: 00007FF6412B2DD6 v8::internal::Version::IsCandidate+77286
+ 7: 00007FF6417C7BC9 v8::Object::GetIsolate+522233
+ 8: 00007FF6417C81D8 v8::Object::GetIsolate+523784
+ 9: 00007FF6417CC00D v8::Object::GetIsolate+539709
+10: 00007FF6417D3573 v8::Object::GetIsolate+569763
+11: 00007FF6417C1C8F v8::Object::GetIsolate+497855
+12: 00007FF6417C0823 v8::Object::GetIsolate+492627
+13: 00007FF6417B9A6A v8::Object::GetIsolate+464538
+14: 00007FF6417B9C04 v8::Object::GetIsolate+464948
+15: 00007FF6417BA7B1 v8::Object::GetIsolate+467937
+16: 00007FF6417C0A08 v8::Object::GetIsolate+493112
+17: 00007FF6417B9A6A v8::Object::GetIsolate+464538
+18: 00007FF6417BD06D v8::Object::GetIsolate+478365
+19: 00007FF6417C018A v8::Object::GetIsolate+490938
+20: 00007FF6417B9A6A v8::Object::GetIsolate+464538
+21: 00007FF6417C3225 v8::Object::GetIsolate+503381
+22: 00007FF6417B7D22 v8::Object::GetIsolate+457042
+23: 00007FF6417B7930 v8::Object::GetIsolate+456032
+24: 00007FF6417A7398 v8::Object::GetIsolate+389064
+25: 00007FF6419A97C8 v8::SharedValueConveyor::SharedValueConveyor+30504
+26: 00007FF6419A2C08 v8::SharedValueConveyor::SharedValueConveyor+2920
+27: 00007FF6419A7E8C v8::SharedValueConveyor::SharedValueConveyor+24044
+28: 00007FF6419AD178 v8::SharedValueConveyor::SharedValueConveyor+45272
+29: 00007FF641A2A6D7 v8::ScriptCompiler::CompileFunctionInternal+679
+30: 00007FF641A2A424 v8::ScriptCompiler::CompileFunction+84
+31: 00007FF640EC2B24 node::OnFatalError+57124
+32: 00007FF640EC3114 node::OnFatalError+58644
+33: 0000025D9FE0FA64 
+RpcExitError: Process 12932 exited with code 134
+[31mIssues checking service aborted - probably out of memory. Check the `memoryLimit` option in the ForkTsCheckerWebpackPlugin configuration.[39m
+[31mIf increasing the memory doesn't solve the issue, it's most probably a bug in the TypeScript.[39m
+
+
+#
+# Fatal process out of memory: Zone
+#
+----- Native stack trace -----
+
+
+
+#
+# Fatal process out of memory: Zone
+#
+----- Native stack trace -----
+
+ 1: 00007FF640F4BD7B 
+ 2: 00007FF640E2FB6F 
+ 3: 00007FF641FD8A56 
+ 4: 00007FF641A2F841 
+ 5: 00007FF6414F315E 
+ 6: 00007FF64204F6B0 
+ 7: 00007FF64207C5AA 
+ 8: 00007FF642113FFB 
+ 9: 00007FF64211268A 
+10: 00007FF642250A11 
+11: 00007FF642237A15 
+12: 00007FF64223F2FD 
+13: 00007FF6422556F7 
+14: 00007FF64225557B 
+15: 00007FF642254DD0 
+16: 00007FF6420E8A83 
+17: 00007FF6420E369A 
+18: 00007FF6419A9734 
+19: 00007FF641962CAF 
+20: 00007FF641C343C5 
+21: 00007FF640E32459 
+22: 00007FF640FAD50E 
+23: 00007FF64269E01E 
+24: 00007FF80952259D 
+25: 00007FF80AF0AF38 
